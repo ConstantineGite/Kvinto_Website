@@ -1,0 +1,7 @@
+body {
+  overflow: hidden; }
+  body #container {
+    width: 1920px;
+    height: 1080px;
+    padding: 0;
+    margin: 0 auto; }
