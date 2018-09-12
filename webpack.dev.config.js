@@ -32,7 +32,7 @@ module.exports = {
 	target: "web",
 	context: `${__dirname}/source/`,
 	entry: [
-		`${__dirname}/source/ts/index.ts`,
+		`${__dirname}/source/front/ts/index.ts`,
 		`${__dirname}/node_modules/webpack/hot/dev-server`
 	],
 	resolve: {
