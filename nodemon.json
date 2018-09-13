@@ -1,0 +1,4 @@
+{
+  "watch": ["/build/index.min.js", "/source/"],
+  "ext": "js, ts"
+}
