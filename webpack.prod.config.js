@@ -72,7 +72,7 @@ const server = () => ({
 	mode: "production",
 	externals: nodeModules,
 	context: `${__dirname}/source/server/`,
-	entry: ["babel-polyfill", `${__dirname}/source/server/ts/index.ts`],
+	entry: ["babel-polyfill", `${__dirname}/source/server/ts/routing/index.ts`],
 	resolve: {
 		extensions: [".ts", ".js", ".json"]
 	},
