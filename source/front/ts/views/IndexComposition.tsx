@@ -1,11 +1,12 @@
 import * as React from "react";
+import { BrowserRouter } from "react-router-dom";
 
 export class IndexComposition extends React.Component {
 	public render(): JSX.Element {
 		return (
-			<div>
-				Heloo world
-			</div>
+			<BrowserRouter>
+				<div>awdawd</div>
+			</BrowserRouter>
 		);
 	}
 }
