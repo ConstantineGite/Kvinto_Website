@@ -1,18 +1,15 @@
+import React, { Component, createElement } from "react";
+import Header from "./header/index";
+import MidleBlock from "./midle_block/index";
 
-import { Component, createElement } from "react";
-import Component from "/react";
+export default class FormComposition extends Component {
 
-export class App extends Component {
 	public render(): JSX.Element {
 		return (
-			<p>sdfsdf</p>
+			<div className="form-wrap">
+				<Header />
+				<MidleBlock />
+			</div>
 		);
 	}
-
-	// private collectLists(): void {
-
-	// }
-
-	// private getList(options: any): JSX.Element {
-
-	// }
+}
