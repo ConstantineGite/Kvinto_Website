@@ -52,15 +52,15 @@ const front = name => ({
 		extensions: [".ts", ".js", ".tsx", ".jsx"]
 	},
 	output: {
-		path: `${__dirname}/public/${name}/`,
-		filename: `${name}.min.js`
+		path: `${__dirname}/build/`,
+		filename: `build.min.js`
 	},
 	module: {
 		rules: [loaders.ts, loaders.json, loaders.sass, loaders.media]
 	},
 	plugins: [
 		new ExtractTextPlugin({
-			filename: `./style/${name}.min.css`,
+			filename: `/${name}.min.css`,
 			disable: false,
 			allChunks: true
 		})
