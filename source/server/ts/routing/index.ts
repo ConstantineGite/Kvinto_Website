@@ -2,16 +2,18 @@ import * as http from "http";
 import * as fs from "fs";
 import { relative } from "path";
 import pug from "pug";
-//const path = require("path");
-//import path from "path";
-//console.log(path, "path");
-//const compiledFunction = pug.compileFile(relative(process.cwd(), "/source/server/pug/components/tamplate.pug"));
+
+			//const path = require("path");
+			//import path from "path";
+			//console.log(path, "path");
+			//const compiledFunction = pug.compileFile(relative(process.cwd(), "/source/server/pug/components/tamplate.pug"));
+
 const compiledFunction = relative(process.cwd(),  "./source/server/pug/components/tamplate.pug");
-console.log(pug.compileFile(compiledFunction),    "<-------------compiledFunction-------------->");
+console.log(pug.compileFile(compiledFunction),    "<-------------compiledFunction------------>");
 ////
 const _TEMPLATE = relative(process.cwd(), "./source/server/pug/components/tamplate.pug");
 const html = pug.renderFile(_TEMPLATE);
-console.log(html, "html");
+console.log(html, "html------------------------------------------->");
 
 const server = http
 	.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
@@ -19,7 +21,6 @@ const server = http
 		const dataHTML = fs.readFileSync("index-dev.html");
 		const dataHTML2 = fs.readFileSync("index-dev2.html");
 		//console.log(pug, "pug");
-
 		if (m === "/tab1") {
 			res.writeHead(200, { "Content-Type": "text/html" });
 			console.log("-------------------------------------------------------------->");
@@ -48,6 +49,9 @@ const server = http
 			} catch (err) {
 				res.end(404);
 			}
+		} else if (m === "/"){
+			res.writeHead(200, { "Content-Type": "text/html" });
+			res.end("<h1>Lunch</h1>");
 		}
 	})
 	.listen(40876);
