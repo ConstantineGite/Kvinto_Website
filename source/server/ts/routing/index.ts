@@ -6,8 +6,12 @@ import pug from "pug";
 //import path from "path";
 //console.log(path, "path");
 //const compiledFunction = pug.compileFile(relative(process.cwd(), "/source/server/pug/components/tamplate.pug"));
-const compiledFunction = relative(process.cwd(), "./source/server/pug/components/tamplate.pug");
-console.log(pug.compileFile(compiledFunction), "<-------------compiledFunction-------------->");
+const compiledFunction = relative(process.cwd(),  "./source/server/pug/components/tamplate.pug");
+console.log(pug.compileFile(compiledFunction),    "<-------------compiledFunction-------------->");
+////
+const _TEMPLATE = relative(process.cwd(), "./source/server/pug/components/tamplate.pug");
+const html = pug.renderFile(_TEMPLATE);
+console.log(html, "html");
 
 const server = http
 	.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
