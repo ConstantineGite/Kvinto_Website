@@ -2,11 +2,11 @@ import * as http from "http";
 import * as fs from "fs";
 import { relative } from "path";
 import pug from "pug";
-const path = require("path");
+//const path = require("path");
 //import path from "path";
 //console.log(path, "path");
 //const compiledFunction = pug.compileFile(relative(process.cwd(), "/source/server/pug/components/tamplate.pug"));
-const compiledFunction = path.resolve("./source/server/pug/components/tamplate.pug");
+const compiledFunction = relative(process.cwd(), "./source/server/pug/components/tamplate.pug");
 console.log(pug.compileFile(compiledFunction), "<-------------compiledFunction-------------->");
 
 const server = http
