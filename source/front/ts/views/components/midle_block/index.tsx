@@ -33,8 +33,6 @@ export default class MidleBlock extends Component<{}, IState> {
 		);
 	}
 
-	
-
 	private	updaBlock(val: string): JSX.Element {
 		return  (val === "tab1") ? <div>Все о digital signature
 		клнтент digital signature digital signature</div> : <div>>Все о пончиках куте пончики лучшые 

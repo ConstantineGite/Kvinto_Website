@@ -8,7 +8,7 @@ class App {
 		this.mongoSetup();
 	}
 
-	private mongoSetup(): void{
+	private mongoSetup(): void {
 		mongoose.Promise = global.Promise;
 		mongoose.connect(this.mongoUrl);
 	}

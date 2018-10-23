@@ -1,9 +1,8 @@
 
 import * as express from "express";
 import * as path from "path";
-import * as _ from "lodash";
+//import * as _ from "lodash";
 import * as pug from "pug";
-
 //const juice = require("juice");
 //const sass = require('node-sass');
 //const layout = require("./data/layout.json");
@@ -21,8 +20,9 @@ import * as pug from "pug";
 	//const app = express();
 
 	//const locale = { en, ar };
-
-const _TEMPLATE = path.resolve("./views-ref/template.pug");
+	 const TEMPLATE = path.resolve("/source/server/pug/components/tamplate.pug");
+	 const RENDER =  html = pug.renderFile(TEMPLATE);
+	 export default RENDER;
 //const _STYLE = path.resolve(`./views-ref/style/main.sass`);
 	//const _STORAGE = `http://localhost:3000/storage/`;
 
@@ -61,13 +61,13 @@ const render = (data, textBlock, leng) => {
 
 		//app.use(express.static(__dirname));
 
-app.get('/:lang/:type', (req, res)=>{
+//app.get('/:lang/:type', (req, res)=>{
 		//const data = localeParse(req.params.type, req.params.lang);
 		//let textBlock = selectLeng(req.params.lang)
 		//let leng = switchingLayout(req.params.lang)
     	//const html = render(data, textBlock, leng);
     	//res.send(html)
-});
+//});
 
 // app.listen(3000, ()=>{
 // 	console.log("listen on http://localhost:3000");

@@ -1,15 +1,24 @@
 import * as http from "http";
 import * as fs from "fs";
 import { relative } from "path";
+import pug from "pug";
+const path = require("path");
+//import path from "path";
+//console.log(path, "path");
+//const compiledFunction = pug.compileFile(relative(process.cwd(), "/source/server/pug/components/tamplate.pug"));
+const compiledFunction = path.resolve("./source/server/pug/components/tamplate.pug");
+console.log(pug.compileFile(compiledFunction), "<-------------compiledFunction-------------->");
 
 const server = http
 	.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
 		const m = req.url;
 		const dataHTML = fs.readFileSync("index-dev.html");
 		const dataHTML2 = fs.readFileSync("index-dev2.html");
-		console.log(m);
+		//console.log(pug, "pug");
+
 		if (m === "/tab1") {
 			res.writeHead(200, { "Content-Type": "text/html" });
+			console.log("-------------------------------------------------------------->");
 			res.end(dataHTML);
 		} else if (m === "/tab2") {
 			res.writeHead(200, { "Content-Type": "text/html" });
