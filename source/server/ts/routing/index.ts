@@ -9,22 +9,19 @@ import pug from "pug";
 			//const compiledFunction = pug.compileFile(relative(process.cwd(), "/source/server/pug/components/tamplate.pug"));
 
 const compiledFunction = relative(process.cwd(),  "./source/server/pug/components/tamplate.pug");
-console.log(pug.compileFile(compiledFunction),    "<-------------compiledFunction------------>");
-////
+
 const _TEMPLATE = relative(process.cwd(), "./source/server/pug/components/tamplate.pug");
 const html = pug.renderFile(_TEMPLATE);
-console.log(html, "html------------------------------------------->");
+//console.log(html, "html-------------");
 
 const server = http
 	.createServer((req: http.IncomingMessage, res: http.ServerResponse) => {
 		const m = req.url;
 		const dataHTML = fs.readFileSync("index-dev.html");
 		const dataHTML2 = fs.readFileSync("index-dev2.html");
-		//console.log(pug, "pug");
 		if (m === "/tab1") {
 			res.writeHead(200, { "Content-Type": "text/html" });
-			console.log("-------------------------------------------------------------->");
-			res.end(dataHTML);
+			res.end(html);
 		} else if (m === "/tab2") {
 			res.writeHead(200, { "Content-Type": "text/html" });
 			res.end(dataHTML2);
@@ -32,7 +29,6 @@ const server = http
 			try {
 				const file = fs.createReadStream(relative(process.cwd(), "./" + m), { encoding: "utf8", autoClose: true });
 				file.pipe(res);
-
 				file.on("error", (err: Error): void => {
 					res.statusCode = 500;
 					res.end("Server Error");
@@ -51,7 +47,7 @@ const server = http
 			}
 		} else if (m === "/"){
 			res.writeHead(200, { "Content-Type": "text/html" });
-			res.end("<h1>Lunch</h1>");
+			res.end("<h1>index Page</h1>");
 		}
 	})
 	.listen(40876);
