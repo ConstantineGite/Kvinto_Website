@@ -3,5 +3,7 @@ export interface IConfig {
 }
 
 export default {
-	maine: "maine"
+	maine: "maine",
+	case1: "hotel",
+	case2: "restoran"
 } as IConfig;
